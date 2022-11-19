@@ -7,7 +7,7 @@ export default function PlayerSelector(props) {
     transform: "translate(-50%, -50%)",
   };
   return (
-    <button className="player-picker-container" style={style}>
+    <button className="player-selector-container" style={style} onClick={() => props.setOpenPlayerPicker(true)}>
       {props.team ? <></> : <p className="player-position">{props.position}</p>}
     </button>
   );

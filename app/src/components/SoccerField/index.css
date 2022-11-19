@@ -1,4 +1,17 @@
 .field-container{
     margin-top: 20px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.backdrop{
+    width: 100vw;
+    height: 150vh;
+    position: fixed;
+    background-color: black;
+    opacity: 40%;
+    z-index: 9;
 }
