@@ -1,15 +1,19 @@
 .player-picker-container{
-    width: 80px;
-    height: 120px;
-    background-color: wheat;
+    width: 120px;
+    height: 80px;
+    background-color: white;
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 16px;
 }
 
 .player-position{
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
     color: #282828;
-    transform: rotate(90deg);
     font-family: 'Inter', sans-serif;
 }

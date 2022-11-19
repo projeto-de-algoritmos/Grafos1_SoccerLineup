@@ -8,7 +8,7 @@ export default function PlayerSelector(props) {
   };
   return (
     <button className="player-picker-container" style={style}>
-      {props.team ? <></> : <h1 className="player-position">{props.position}</h1>}
+      {props.team ? <></> : <p className="player-position">{props.position}</p>}
     </button>
   );
 }
