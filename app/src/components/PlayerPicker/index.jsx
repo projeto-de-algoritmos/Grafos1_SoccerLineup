@@ -1,3 +1,4 @@
+import Player from "../Player";
 import "./index.css";
 
 export default function PlayerPicker(props) {
@@ -7,6 +8,7 @@ export default function PlayerPicker(props) {
         <span className="material-icons">cancel</span>
       </button>
       <h2>Pick your player</h2>
+      <Player />
     </div>
   );
 }
