@@ -8,31 +8,39 @@ export default function PlayerSelector(props) {
   };
 
   const handleClick = () => {
-    props.setOpenPlayerPicker(true)
-    switch (props.position){
-      case 'GOL':
-        props.setFilterPosition('Goalkeeper');
+    props.setOpenPlayerPicker(true);
+    switch (props.position) {
+      case "GOL":
+        props.setFilterPosition("Goalkeeper");
         break;
-      case 'ZAG':
-      case 'LD':
-      case 'LE':
-        props.setFilterPosition('Defender');
+      case "ZAG":
+      case "LD":
+      case "LE":
+        props.setFilterPosition("Defender");
         break;
-      case 'MEI':
-        props.setFilterPosition('Midfielder');
+      case "MEI":
+        props.setFilterPosition("Midfielder");
         break;
-      case 'CA':
-      case 'PD':
-      case 'PE':
-        props.setFilterPosition('Attacker');
+      case "CA":
+      case "PD":
+      case "PE":
+        props.setFilterPosition("Attacker");
         break;
       default:
-        props.setFilterPosition('')
+        props.setFilterPosition("");
     }
-  }
+  };
   return (
-    <button className="player-selector-container" style={style} onClick={handleClick}>
-      {props.team ? <></> : <p className="player-position">{props.position}</p>}
+    <button
+      className="player-selector-container"
+      style={style}
+      onClick={handleClick}
+    >
+      {props.playerData ? (
+        <></>
+      ) : (
+        <p className="player-position">{props.position}</p>
+      )}
     </button>
   );
 }

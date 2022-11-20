@@ -10,8 +10,8 @@ export default function PlayerPicker(props) {
       </button>
       <h1>Pick your player</h1>
       <div className="players-wrapper">
-        {SoccerPlayers.filter(player => player.position === props.filterPosition).map((player) => 
-          <Player photo={player.photo} nationality={player.nationality} team_logo={player.team.logo} name={player.name} />
+        {SoccerPlayers.filter(player => player.position === props.filterPosition).map((player, index) => 
+          <Player photo={player.photo} nationality={player.nationality} team_logo={player.team.logo} name={player.name} team_name={player.team.name} key={index} />
         )}
       </div>
     </div>
