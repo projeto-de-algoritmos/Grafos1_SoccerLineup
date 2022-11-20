@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useState } from "react";
 import soccerField from "../../assets/soccer_field.png";
+import { PlayerContext } from "../../contexts/PlayersContext";
 import PlayerPicker from "../PlayerPicker";
 import PlayerSelector from "../PlayerSelector";
 import "./index.css";
@@ -7,6 +9,8 @@ import "./index.css";
 export default function SoccerField() {
   const [openPlayerPicker, setOpenPlayerPicker] = useState(false);
   const [filterPosition, setFilterPosition] = useState('');
+  const {playersGraph} = useContext(PlayerContext)
+
   return (
     <div className="field-container">
       {openPlayerPicker && (
@@ -21,6 +25,7 @@ export default function SoccerField() {
         position="CA"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[10]}
       />
       <PlayerSelector
         x="15%"
@@ -28,6 +33,7 @@ export default function SoccerField() {
         position="PD"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[9]}
       />
       <PlayerSelector
         x="85%"
@@ -35,6 +41,7 @@ export default function SoccerField() {
         position="PE"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[8]}
       />
       <PlayerSelector
         x="75%"
@@ -42,6 +49,7 @@ export default function SoccerField() {
         position="MEI"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[7]}
       />
       <PlayerSelector
         x="25%"
@@ -49,6 +57,7 @@ export default function SoccerField() {
         position="MEI"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[6]}
       />
       <PlayerSelector
         x="50%"
@@ -56,6 +65,7 @@ export default function SoccerField() {
         position="MEI"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[5]}
       />
       <PlayerSelector
         x="90%"
@@ -63,6 +73,7 @@ export default function SoccerField() {
         position="LE"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[4]}
       />
       <PlayerSelector
         x="10%"
@@ -70,6 +81,7 @@ export default function SoccerField() {
         position="LD"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[3]}
       />
       <PlayerSelector
         x="65%"
@@ -77,6 +89,7 @@ export default function SoccerField() {
         position="ZAG"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[2]}
       />
       <PlayerSelector
         x="35%"
@@ -84,6 +97,7 @@ export default function SoccerField() {
         position="ZAG"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[1]}
       />
       <PlayerSelector
         x="50%"
@@ -91,6 +105,7 @@ export default function SoccerField() {
         position="GOL"
         setOpenPlayerPicker={setOpenPlayerPicker}
         setFilterPosition={setFilterPosition}
+        playerData={playersGraph[0]}
       />
       <img src={soccerField} alt="Campo de futebol" className="soccer-field" />
     </div>
