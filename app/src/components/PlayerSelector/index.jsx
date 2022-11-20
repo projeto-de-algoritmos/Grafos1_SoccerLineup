@@ -11,7 +11,7 @@ export default function PlayerSelector(props) {
     props.setOpenPlayerPicker(true)
     switch (props.position){
       case 'GOL':
-        props.setFilterPosition('Goalkeaper');
+        props.setFilterPosition('Goalkeeper');
         break;
       case 'ZAG':
       case 'LD':

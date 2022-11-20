@@ -1,4 +1,5 @@
 import Player from "../Player";
+import SoccerPlayers from '../../assets/soccer_players_response.json'
 import "./index.css";
 
 export default function PlayerPicker(props) {
@@ -7,8 +8,12 @@ export default function PlayerPicker(props) {
       <button className="close-btn" onClick={() => props.setOpenPlayerPicker(false)}>
         <span className="material-icons">cancel</span>
       </button>
-      <h2>Pick your player</h2>
-      <Player />
+      <h1>Pick your player</h1>
+      <div className="players-wrapper">
+        {SoccerPlayers.filter(player => player.position === props.filterPosition).map((player) => 
+          <Player photo={player.photo} nationality={player.nationality} team_logo={player.team.logo} name={player.name} />
+        )}
+      </div>
     </div>
   );
 }

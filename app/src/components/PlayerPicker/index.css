@@ -1,5 +1,5 @@
 .player-picker-container{
-    width: 900px;
+    width: 1000px;
     height: 700px;
     background-color: black;
     position: absolute;
@@ -9,6 +9,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.player-picker-container h1{
+    margin: 0;
+    padding-bottom: 24px;
 }
 
 .close-btn{
@@ -27,4 +32,12 @@ button span{
 
 button span:hover{
     opacity: 90%;
+}
+
+.players-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
 }
