@@ -18,3 +18,27 @@
     color: #282828;
     font-family: 'Inter', sans-serif;
 }
+
+.display-player-data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.soccer-field-player-photo{
+    width: 100%;
+    height: 100%;
+    max-width: 48px;
+}
+
+.soccer-field-team-logo{
+    width: 100%;
+    max-width: 24px;
+}
+
+.soccer-field-player-nationality{
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 4px;
+}

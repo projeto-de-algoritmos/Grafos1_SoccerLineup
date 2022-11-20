@@ -37,7 +37,13 @@ export default function PlayerSelector(props) {
       onClick={handleClick}
     >
       {props.playerData ? (
-        <></>
+        <div className="display-player-data">
+          <img className="soccer-field-player-photo" src={props.playerData.photo} alt="Imagem do Jogador" />
+          <div>
+            <p className="soccer-field-player-nationality">{props.playerData.nationality}</p>
+            <img src={props.playerData.team_logo} alt="Logo do Time" className="soccer-field-team-logo"/>
+          </div>
+        </div>
       ) : (
         <p className="player-position">{props.position}</p>
       )}
