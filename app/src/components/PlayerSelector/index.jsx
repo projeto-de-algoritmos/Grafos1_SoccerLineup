@@ -8,7 +8,11 @@ export default function PlayerSelector(props) {
   };
 
   const handleClick = () => {
-    props.setOpenPlayerPicker(true);
+    props.setOpenPlayerPicker({
+      state: true,
+      positionIndex: props.index
+    });
+
     switch (props.position) {
       case "GOL":
         props.setFilterPosition("Goalkeeper");
@@ -36,12 +40,12 @@ export default function PlayerSelector(props) {
       style={style}
       onClick={handleClick}
     >
-      {props.playerData ? (
+      {Object.keys(props.playerData).length > 1 ? (
         <div className="display-player-data">
-          <img className="soccer-field-player-photo" src={props.playerData.photo} alt="Imagem do Jogador" />
+          <img className="soccer-field-player-photo" src={props.playerData.players.photo} alt="Imagem do Jogador" />
           <div>
-            <p className="soccer-field-player-nationality">{props.playerData.nationality}</p>
-            <img src={props.playerData.team_logo} alt="Logo do Time" className="soccer-field-team-logo"/>
+            <p className="soccer-field-player-nationality">{props.playerData.players.nationality}</p>
+            <img src={props.playerData.players.team_logo} alt="Logo do Time" className="soccer-field-team-logo"/>
           </div>
         </div>
       ) : (

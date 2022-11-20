@@ -3,16 +3,19 @@ import { PlayerContext } from '../../contexts/PlayersContext'
 import formatPlayerName from '../../utils/formatPlayerName'
 import './index.css'
 
-export default function Player({photo, nationality, team_logo, name, team_name}){
-    const {setPlayers} = useContext(PlayerContext)
+export default function Player({photo, nationality, team_logo, name, team_name, handleClosePlayerPicker, positionIndex}){
+    const {setPlayers, setShouldUpdate} = useContext(PlayerContext)
     
     const handleClick = () => {
         setPlayers({
             photo,
             nationality,
             team_logo,
-            team_name 
+            team_name,
+            positionIndex
         })
+        setShouldUpdate(true)
+        handleClosePlayerPicker()
     }
     return (
         <button className="player-container" onClick={handleClick}>
