@@ -15,7 +15,7 @@ export const PlayerProvider = ({children}) => {
                 next_pos: [0,2,3,5]
             },
             {
-                next_pos: [0, 2, 4, 5]
+                next_pos: [0, 1, 4, 5]
             },
             {
                 next_pos: [1, 6]
@@ -27,10 +27,10 @@ export const PlayerProvider = ({children}) => {
                 next_pos: [1, 2, 6, 7, 8]
             },
             {
-                next_pos: [3, 5]
+                next_pos: [3, 5, 9]
             },
             {
-                next_pos: [4, 5]
+                next_pos: [4, 5, 10]
             },
             {
                 next_pos: [5, 9, 10]
