@@ -10,6 +10,11 @@
     border: none;
     color: white;
     margin: 24px;
+    transition: all ease .5s;
+}
+
+.player-container:hover{
+    background-color: #262626;
 }
 
 .player-name{
