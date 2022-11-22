@@ -28,7 +28,7 @@ Comandos:
 
 Entrar na pasta app:
 ```
-cd app
+cd .\app\
 ```
 
 Instalar npm:
