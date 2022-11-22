@@ -1,0 +1,40 @@
+.compatibility-result-container{
+    width: 400px;
+    height: 200px;
+    background-color: #141414;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.compatibility-result-container h2{
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.continue-button{
+    width: fit-content;
+    max-height: fit-content;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 24px;
+    border: none;
+    background-color: #262626;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: rgb(230, 230, 230);
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.continue-button:hover{
+    background-color: #2f2f2f;
+}

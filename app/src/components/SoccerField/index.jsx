@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import soccerField from "../../assets/soccer_field.png";
 import { PlayerContext } from "../../contexts/PlayersContext";
 import bfsSearch from "../../utils/bfsSearch";
+import { CompatibilityResultDisplayer } from "../CompatibilityResultDisplayer";
 import PlayerPicker from "../PlayerPicker";
 import PlayerSelector from "../PlayerSelector";
 import "./index.css";
@@ -13,10 +15,33 @@ export default function SoccerField() {
     positionIndex: 0,
   });
   const [filterPosition, setFilterPosition] = useState("");
+  const [playersCompatibility, setPlayersCompatibility] = useState(null)
+  const [disableButton, setDisableButton] = useState(true)
   const { playersGraph } = useContext(PlayerContext);
+
+  useEffect(() => {
+    var checkPlayers = 0
+    
+    for (var i=0; i < playersGraph.length; i++){
+      if (playersGraph[i].players){
+        checkPlayers++;
+      }
+    }
+
+    if (checkPlayers === 11){
+      setDisableButton(false)
+    }
+  }, [playersGraph])
+
   return (
     <>
       <div className="field-container">
+        {playersCompatibility !== null && (
+          <>
+            <CompatibilityResultDisplayer compatibilityResult={playersCompatibility} setCompatibilityResult={setPlayersCompatibility}/>
+            <div className="backdrop"/>
+          </>
+        )}
         {openPlayerPicker.state && (
           <>
             <PlayerPicker
@@ -132,7 +157,13 @@ export default function SoccerField() {
           className="soccer-field"
         />
       </div>
-      <button onClick={() => bfsSearch(playersGraph)}>Validar time</button>
+      <button
+        className={`players-compatibility-button ${disableButton && 'disabled'}`}
+        onClick={() => setPlayersCompatibility(bfsSearch(playersGraph))}
+        disabled={disableButton}
+      >
+        Classificar compatibilidade do time
+      </button>
     </>
   );
 }
